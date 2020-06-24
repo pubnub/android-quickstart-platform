@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp">
+
+    <ScrollView
+        android:id="@+id/messages_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_submit_message"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/messages_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="true"
+            android:gravity="start|top"
+            android:importantForAutofill="no"
+            tools:ignore="LabelFor" />
+
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/btn_submit_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/entry_update_text"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:minWidth="140sp"
+        android:onClick="onClick"
+        android:text="Submit Update to The Guide"
+        android:textSize="14sp"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/entry_update_text"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="enter update for Earth"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:text="Mostly Harmless."
+        android:textSize="14sp"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>
