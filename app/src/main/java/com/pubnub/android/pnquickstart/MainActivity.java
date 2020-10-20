@@ -15,13 +15,14 @@ import com.pubnub.api.callbacks.SubscribeCallback;
 import com.pubnub.api.enums.PNStatusCategory;
 import com.pubnub.api.models.consumer.PNPublishResult;
 import com.pubnub.api.models.consumer.PNStatus;
+import com.pubnub.api.models.consumer.objects_api.channel.PNChannelMetadataResult;
+import com.pubnub.api.models.consumer.objects_api.membership.PNMembershipResult;
+import com.pubnub.api.models.consumer.objects_api.uuid.PNUUIDMetadataResult;
 import com.pubnub.api.models.consumer.pubsub.PNMessageResult;
 import com.pubnub.api.models.consumer.pubsub.PNPresenceEventResult;
 import com.pubnub.api.models.consumer.pubsub.PNSignalResult;
+import com.pubnub.api.models.consumer.pubsub.files.PNFileEventResult;
 import com.pubnub.api.models.consumer.pubsub.message_actions.PNMessageActionResult;
-import com.pubnub.api.models.consumer.pubsub.objects.PNMembershipResult;
-import com.pubnub.api.models.consumer.pubsub.objects.PNSpaceResult;
-import com.pubnub.api.models.consumer.pubsub.objects.PNUserResult;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
@@ -77,16 +78,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void signal(PubNub pubnub, PNSignalResult event) { }
 
             @Override
-            public void user(PubNub pubnub, PNUserResult event) { }
+            public void uuid(PubNub pubnub, PNUUIDMetadataResult pnUUIDMetadataResult) { }
 
             @Override
-            public void space(PubNub pubnub, PNSpaceResult event) { }
+            public void channel(PubNub pubnub, PNChannelMetadataResult pnChannelMetadataResult) { }
 
             @Override
             public void membership(PubNub pubnub, PNMembershipResult event) { }
 
             @Override
             public void messageAction(PubNub pubnub, PNMessageActionResult event) { }
+
+            @Override
+            public void file(PubNub pubnub, PNFileEventResult event) { }
         });
 
         pubnub.subscribe()
