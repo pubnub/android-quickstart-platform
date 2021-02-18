@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView messagesText;
 
     private PubNub pubnub;
-    final private String clientUUID = java.util.UUID.randomUUID().toString();
+    final private String clientUUID = "ReplaceWithYourClientIdentifier";
     private String theChannel = "the_guide";
     private String theEntry = "Earth";
 
